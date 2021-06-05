@@ -1,0 +1,380 @@
+/* Resets */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* Html and Body */
+html {
+    font-family: 'sans-serif';
+    font-size: 10px;
+}
+
+body {
+    position: relative;
+    box-sizing: border-box;
+    font-size: 1.6rem;
+}
+
+/* Variables */
+:root {
+    --primary-color: #f6e40a;
+    --secondary-color: #5e72e4;
+    --success-color: #2dce89;
+    --danger-color: #f5365c;
+    --warning-color: #fdce4a;
+    --info-color: #172b4d;
+    --black-color: #222;
+    --light-text-color: #fff;
+    --dark-text-color: #222;
+    --input-border-color: #cbd5e1;
+    --input-placeholder-color: #b5b5b5;
+    --input-icon-color: #9c9c9c;
+    --disabled-color: #cbd5e1;
+}
+
+/* Block */
+.block {
+    margin: auto;
+    width: 95%;
+    max-width: 950px;
+}
+
+.block.--small {
+    max-width: 450px;
+}
+
+/* Typography */
+.t-left {
+    text-align: left;
+}
+
+.t-center {
+    text-align: center;
+}
+
+.t-right {
+    text-align: right;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    position: relative;
+    padding: 0.8rem 2rem;
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: 1.6rem;
+    color: var(--light-text-color);
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    appearance: none;
+    user-select: none;
+}
+
+.btn::after {
+    position: absolute;
+    content: "";
+    top: -25%;
+    left: -25%;
+    width: 150%;
+    height: 150%;
+    border-radius: 55px;
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scaleX(0.3);
+    opacity: 0;
+    transition: transform 0.125s;
+}
+
+.btn.--dt {
+    color: var(--dark-text-color);
+}
+
+.btn:hover {
+    box-shadow: rgba(50, 50, 93, 0.15) 0px 30px 60px -12px inset,
+rgba(0, 0, 0, 0.2) 0px 18px 36px -18px inset;
+}
+
+.btn.--dh:hover {
+    box-shadow: rgba(50, 50, 93, 0.15) 0px 30px 60px -12px inset,
+rgba(255, 255, 255, 0.2) 0px 18px 36px -18px inset;
+}
+
+.btn:active::after {
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+.btn.--primary {
+    background-color: var(--primary-color);
+}
+
+.btn.--border-primary {
+    border: 1px solid var(--primary-color);
+}
+
+.btn.--secondary {
+    background-color: var(--secondary-color);
+}
+
+.btn.--border-secondary {
+    border: 1px solid var(--secondary-color);
+}
+
+.btn.--success {
+    background-color: var(--success-color);
+}
+
+.btn.--border-success {
+    border: 1px solid var(--success-color);
+}
+
+.btn.--danger {
+    background-color: var(--danger-color);
+}
+
+.btn.--border-danger {
+    border: 1px solid var(--danger-color);
+}
+
+.btn.--warning {
+    background-color: var(--warning-color);
+}
+
+.btn.--border-warning {
+    border: 1px solid var(--warning-color);
+}
+
+.btn.--info {
+    background-color: var(--info-color);
+}
+
+.btn.--border-info {
+    border: 1px solid var(--info-color);
+}
+
+.btn.--black {
+    background-color: var(--black-color);
+}
+
+.btn.--border-black {
+    border: 1px solid var(--black-color);
+}
+
+.btn.--rounded {
+    border-radius: 5px;
+}
+
+.btn.--pill {
+    border-radius: 55px;
+}
+
+.btn.--round5 {
+    padding: 0;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 5.55rem;
+}
+
+.btn.--full {
+    width: 100%;
+}
+
+.btn.--small {
+    padding: 0.5rem 2rem;
+    font-size: 1.4rem;
+}
+
+.btn.--big {
+    padding: 1.4rem 2.6rem;
+    font-size: 2rem;
+}
+
+.btn-gp {
+    display: flex;
+    vertical-align: middle;
+}
+
+.btn-gp.--centered {
+    justify-content: center;
+}
+
+.btn-gp.--right {
+    justify-content: flex-end;
+}
+
+.btn-gp > *:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.btn-gp > *:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.btn-icon {
+    display: inline-block;
+    padding-right: 0.3rem;
+    transform: translateY(0.25rem);
+}
+
+.btn-icon.--right {
+    padding-right: 0;
+    padding-left: 0.3rem;
+}
+
+/* Inputs */
+.input {
+    padding: 1.2rem;
+    border: 1px solid var(--input-border-color);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    font-family: inherit;
+    font-size: 1.6rem;
+    outline: none;
+}
+
+select.input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvgxmlns='http://www.w3.org/2000/svg' fill='%2364748B' viewBox='0 0 2424'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 1.1rem;
+    background-size: 2.5rem;
+}
+
+textarea.input {
+    resize: vertical;
+}
+
+.input[type=file] {
+    opacity: 0;
+}
+
+.input.--file {
+    position: relative;
+    padding: 0;
+}
+
+.file-label {
+    position: absolute;
+    top: 1.2rem;
+    left: 1.2rem;
+}
+
+.input:focus {
+    border-color: var(--primary-color);
+}
+
+.input:disabled {
+    background-color: var(--disabled-color);
+}
+
+.input.--full {
+    width: 100%;
+}
+
+.input.--danger {
+    border-color: var(--danger-color);
+}
+
+.input-gp {
+    display: inline-block;
+    position: relative;
+}
+
+.input-gp.--icon-left .input {
+    padding-left: 3.6rem;
+}
+
+.input-gp.--icon-left .file-label {
+    left: 3.6rem;
+}
+
+.input-gp.--icon-right .input {
+    padding-right: 3.6rem;
+}
+
+.input-icon {
+    position: absolute;
+    left: 0.9rem;
+    top: 1.4rem;
+    font-size: 2rem;
+    color: var(--input-icon-color);
+}
+
+.input-icon.--right {
+    left: auto;
+    right: 0.9rem;
+}
+
+::placeholder, .placeholder {
+    color: var(--input-placeholder-color);
+}
+
+/* Labels */
+.label {
+    font-size: 1.6rem;
+    letter-spacing: 0.05rem;
+}
+
+.label.--full {
+    display: block;
+    padding-bottom: 1rem;
+}
+
+.label.--upp {
+    text-transform: uppercase;
+}
+
+.label.--bold {
+    font-weight: bold;
+}
+
+/* Card */
+.card {
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    overflow: hidden;
+}
+
+.card-icon {
+    text-align: center;
+    font-size: 5rem;
+    transform: translateY(1.25rem);
+}
+
+.card-image {
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-image.--fixed20 {
+    height: 20rem;
+}
+
+.card-content {
+    padding: 1.5rem 2rem 2rem;
+}
+
+.card-title {
+    font-size: 1.9rem;
+    font-weight: bold;
+}
+
+.card-p {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+}

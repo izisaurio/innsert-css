@@ -1,0 +1,18 @@
+{
+  "name": "innsert-css",
+  "version": "1.0.0",
+  "description": "Css components",
+  "main": "index.js",
+  "scripts": {
+    "dev": "live-server",
+    "build": "css-minify -f /css/innsert.css"
+  },
+  "keywords": [
+    "css"
+  ],
+  "author": "izisaurio <izi.isaac@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "css-minify": "^1.1.0"
+  }
+}
