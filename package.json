@@ -1,6 +1,6 @@
 {
   "name": "innsert-css",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Css components",
   "main": "index.js",
   "scripts": {

@@ -22,12 +22,19 @@ body {
 /* Variables */
 :root {
     --primary-color: #f6e40a;
+    --primary-rgb: 246, 228, 10;
     --secondary-color: #5e72e4;
+    --secondary-rgb: 94, 114, 228;
     --success-color: #2dce89;
+    --success-rgb: 45, 206, 137;
     --danger-color: #f5365c;
+    --danger-rgb: 245, 54, 92;
     --warning-color: #fdce4a;
+    --warning-rgb: 253, 206, 74;
     --info-color: #172b4d;
+    --info-rgb: 23, 43, 77;
     --black-color: #222;
+    --black-rgb: 34, 34, 34;
     --light-text-color: #fff;
     --dark-text-color: #222;
     --input-border-color: #cbd5e1;
@@ -352,8 +359,12 @@ textarea.input {
 
 .card-icon {
     text-align: center;
-    font-size: 5rem;
-    transform: translateY(1.25rem);
+}
+
+.card-icon > img {
+    display: inline-block;
+    padding-top: 2rem;
+    width: 50%;
 }
 
 .card-image {
@@ -377,4 +388,51 @@ textarea.input {
 .card-p {
     margin-top: 1rem;
     font-size: 1.6rem;
+}
+
+/* Circled icon */
+.circled-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999px;
+    font-size: 3rem;
+    font-weight: bold;
+    width: 6rem;
+    height: 6rem;
+}
+
+.circled-icon.--primary {
+    background-color: rgba(var(--primary-rgb), 0.2);
+    color: var(--primary-color);
+}
+
+.circled-icon.--secondary {
+    background-color: rgba(var(--secondary-rgb), 0.2);
+    color: var(--secondary-color);
+}
+
+.circled-icon.--success {
+    background-color: rgba(var(--success-rgb), 0.2);
+    color: var(--success-color);
+}
+
+.circled-icon.--danger {
+    background-color: rgba(var(--danger-rgb), 0.2);
+    color: var(--danger-color);
+}
+
+.circled-icon.--warning {
+    background-color: rgba(var(--warning-rgb), 0.2);
+    color: var(--warning-color);
+}
+
+.circled-icon.--info {
+    background-color: rgba(var(--info-rgb), 0.2);
+    color: var(--info-color);
+}
+
+.circled-icon.--black {
+    background-color: rgba(var(--black-rgb), 0.2);
+    color: var(--black-color);
 }
